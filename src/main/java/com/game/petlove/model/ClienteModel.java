@@ -11,7 +11,7 @@ public class ClienteModel {
     @Column(name = "First_name", nullable = false)
     private String nome;
     @Column(name = "Last_name", nullable = false)
-    private String Age;
+    private int Age;
     @Column(name = "First_name", nullable = false)
     private int idade;
     @Column(name = "Email", nullable = false)
@@ -21,8 +21,11 @@ public class ClienteModel {
     @Column(name = "Addres", nullable = false)
     private String endereco;
 
+
+
     public ClienteModel() {
     }
+
 
     public int getId() {
         return id;
@@ -40,11 +43,11 @@ public class ClienteModel {
         this.nome = nome;
     }
 
-    public String getAge() {
+    public int getAge() {
         return Age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         Age = age;
     }
 
