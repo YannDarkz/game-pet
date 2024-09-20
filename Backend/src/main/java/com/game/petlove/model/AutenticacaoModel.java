@@ -1,8 +1,16 @@
 package com.game.petlove.model;
 
+import jakarta.persistence.*;
+
+@Entity(name = "Autenticacao")
+@Table(name = "authentication", schema = "petlove")
 public class AutenticacaoModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_Usuario;
+    @Column(name = "usuario", nullable = false)
     private String userName;
+    @Column(name = "password", nullable = false)
     private String password;
 
     public AutenticacaoModel() {
