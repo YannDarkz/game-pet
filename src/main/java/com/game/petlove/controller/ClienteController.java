@@ -1,7 +1,7 @@
 package com.game.petlove.controller;
 
 import com.game.petlove.model.ClienteModel;
-import com.game.petlove.model.service.Verification;
+import com.game.petlove.services.Verification;
 import com.game.petlove.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,23 +12,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/clientes")
+@RequestMapping("/api/usuarios")
 public class ClienteController {
-    private static Verification verification;
-
     @Autowired
-    private static ClienteRepository clienteRepository;
+    private Verification verification;
+    @Autowired
+    private ClienteRepository clienteRepository;
 
     @PostMapping("/add")
     public ResponseEntity<HttpStatus> registerUser(@RequestBody ClienteModel clienteModel){
-         if(!verification.checkForEmptyFields(clienteModel)){
-             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
-         } else if(verification.checkForEmptyFields(clienteModel)){
+          boolean state = verification.checkForEmptyFields(clienteModel);
+          if(state){
              clienteRepository.save(clienteModel);
              return new ResponseEntity<>(HttpStatus.CREATED);
          } else {
-             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+             return new ResponseEntity<>(HttpStatus.ACCEPTED);
          }
     }
-
 }
