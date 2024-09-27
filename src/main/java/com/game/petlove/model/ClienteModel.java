@@ -8,24 +8,20 @@ public class ClienteModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "First_name", nullable = false)
+    @Column(name = "name", nullable = false)
     private String nome;
-    @Column(name = "Last_name", nullable = false)
-    private int Age;
-    @Column(name = "First_name", nullable = false)
-    private int idade;
-    @Column(name = "Email", nullable = false)
+    @Column(name = "Age", nullable = false)
+    private int age;
+    @Column(name = "email", nullable = false)
     private String email;
-    @Column(name = "Whatsapp", nullable = false)
+    @Column(name = "whatsapp", nullable = true)
     private String Whatsapp;
-    @Column(name = "Addres", nullable = false)
+    @Column(name = "addres", nullable = false)
     private String endereco;
 
-
-
     public ClienteModel() {
-    }
 
+    }
 
     public int getId() {
         return id;
@@ -44,19 +40,11 @@ public class ClienteModel {
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(int age) {
-        Age = age;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
+        this.age = age;
     }
 
     public String getEmail() {
