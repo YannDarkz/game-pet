@@ -4,10 +4,10 @@ CREATE TABLE `petlove`.`usuarios`
 (
     `id`         INT         NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(20) NOT NULL,
-    `Age`        INT         NOT NULL,
-    `Email`      VARCHAR(60) NOT NULL,
-    `Whatsapp`   VARCHAR(14) NULL,
-    `Addres`     VARCHAR(60) NULL,
+    `age`        INT         NOT NULL,
+    `email`      VARCHAR(60) NOT NULL,
+    `whatsapp`   VARCHAR(14) NULL,
+    `addres`     VARCHAR(60) NULL,
     PRIMARY KEY (`id`),
     UNIQUE INDEX `Email_UNIQUE` (`Email`)
 );
