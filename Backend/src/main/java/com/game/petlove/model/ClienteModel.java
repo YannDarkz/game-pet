@@ -8,20 +8,31 @@ public class ClienteModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "First_name", nullable = false)
-    private String nome;
-    @Column(name = "Last_name", nullable = false)
-    private String Age;
-    @Column(name = "First_name", nullable = false)
-    private int idade;
-    @Column(name = "Email", nullable = false)
+    @Column(name = "name", nullable = false)
+    private String name;
+    @Column(name = "Age", nullable = false)
+    private int age;
+    @Column(name = "email", nullable = false)
     private String email;
-    @Column(name = "Whatsapp", nullable = false)
-    private String Whatsapp;
-    @Column(name = "Addres", nullable = false)
+    @Column(name = "whatsapp", nullable = true)
+    private String whastapp;
+    @Column(name = "addres", nullable = false)
     private String endereco;
 
     public ClienteModel() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "ClienteModel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", whastapp='" + whastapp + '\'' +
+                ", endereco='" + endereco + '\'' +
+                '}';
     }
 
     public int getId() {
@@ -32,28 +43,20 @@ public class ClienteModel {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAge() {
-        return Age;
+    public int getAge() {
+        return age;
     }
 
-    public void setAge(String age) {
-        Age = age;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getEmail() {
@@ -64,12 +67,12 @@ public class ClienteModel {
         this.email = email;
     }
 
-    public String getWhatsapp() {
-        return Whatsapp;
+    public String getWhastapp() {
+        return whastapp;
     }
 
-    public void setWhatsapp(String whatsapp) {
-        Whatsapp = whatsapp;
+    public void setWhastapp(String whastapp) {
+        this.whastapp = whastapp;
     }
 
     public String getEndereco() {
