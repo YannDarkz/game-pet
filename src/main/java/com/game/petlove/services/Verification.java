@@ -4,7 +4,7 @@ import com.game.petlove.model.ClienteModel;
 
 public class Verification {
     public boolean checkForEmptyFields(ClienteModel cliente){
-        if(!cliente.getNome().isEmpty()  && !cliente.getEmail().isEmpty() && cliente.getAge() != 0){
+        if(cliente.getName().isEmpty()  && cliente.getEmail().isEmpty() && cliente.getAge() != 0){
             System.out.println("Estou com todos dados");
             return true;
         } else {
@@ -15,7 +15,7 @@ public class Verification {
 
     public static void main(String[] args) {
         ClienteModel cliente = new ClienteModel();
-        cliente.setNome("Jose");
+        cliente.setName("Jose");
         cliente.setEmail("sync@gmail.com");
         cliente.setAge(1);
 

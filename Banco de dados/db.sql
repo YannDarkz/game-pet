@@ -6,7 +6,7 @@ CREATE TABLE `petlove`.`usuarios`
     `name` VARCHAR(20) NOT NULL,
     `age`        INT         NOT NULL,
     `email`      VARCHAR(60) NOT NULL,
-    `whatsapp`   VARCHAR(14) NULL,
+    `whastapp`   VARCHAR(14) NULL,
     `addres`     VARCHAR(60) NULL,
     PRIMARY KEY (`id`),
     UNIQUE INDEX `Email_UNIQUE` (`Email`)
